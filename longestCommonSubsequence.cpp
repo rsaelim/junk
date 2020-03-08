@@ -201,3 +201,39 @@ public:
 private:
     map<key, int> cache;
 };
+
+
+// Correct DP solution
+
+class Solution {
+
+public:
+
+    void initMemo( vector<vector<int>> &memo ) {     
+        memo.resize(text1.length());
+        for ( int i = 0; i < memo.size(); ++i ) {
+            memo.resize( text2.length() );
+            memo[0] = 0;
+            memo[i][0] = 0;
+        }
+    }
+
+    int longestCommonSubsequence(string text1, string text2) {
+
+        vector<vector<int>> memo;
+        initMemo( memo );
+
+        for (int i = 1; i < memo.size(); ++i ) {
+            for (int j = 1; j < memo[i].size(); ++j ) {
+
+                int daig = memo[i-1][j-1];
+                if ( text1[i-1] == text2[j-1] ) { daig++; }
+
+                memo[i][j] = max( max(memo[i-1][j], memo[i][j-1]), diag );
+                if ( i == text1.length() && j == text2.length() )
+                    return memo[i][j];
+            }
+        }
+        return -1;
+    }
+};
