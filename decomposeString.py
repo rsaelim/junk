@@ -42,8 +42,40 @@ def decomposeString( inStr ):
             index = 0
             mySet [ "a", "an", "n", "aa", "aaa", "aaaa", "aaaaa" ]
             res[ "a", "an", "n", "aa", "aa"]
+
+Method: Trie
+Runtime: O(n), n being length of string 
+because we iterate the trie as we look at each character
+Space O(n), worst case did not change but we are saving space on aaa example
 '''
-            
+
+class node:
+  self.children = {}
+  def __init__():
+    
+
+def decomposeString( input ):
+  res = []
+  trie = node()
+  current = trie
+  word = ""
+  
+  for index, char in enumerate(input):
+    word += char
+    if char in current.children.keys() and index != len(input) #We were here before
+      current = current.children[char]
+    else:
+      current.children[char] = new Node()
+      res.append( word )
+      word = ""
+      current = trie
+
+  return res
+
+
+
+
+
 
 
 
