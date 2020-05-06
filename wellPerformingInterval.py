@@ -104,28 +104,3 @@ def findMaxWellPerforming( inputHours ):
  			maxIntervalSize = thisIntervalSize
 
  	return maxIntervalSize
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
